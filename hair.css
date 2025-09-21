@@ -11,7 +11,7 @@ body{
   color: white;
 }
 header{
-  background-color: #363434cc;
+  background-color:  rgba(54, 52, 52, 0.95);
   height: 60px;
   position: sticky;
   display: flex;
@@ -126,6 +126,13 @@ nav a{
 }
 .header-right{
   
+}
+.header-right button{
+  background-color: #dda0dd;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: large;
+  border: none;
 }
 
 .intro {
