@@ -17,8 +17,3 @@ toggleBtn.addEventListener("click", () => {
   navLinks.classList.toggle("open");
 });
 
-const formatCurrency = (n, currency = "EUR", locale = "en-EE") =>
-  new Intl.NumberFormat(locale, {style: "currency", currency}).format(n);
-
-const makeSwatches = (colors =[]) => colors.map(c => `<button class="swatch" type="button" title="${c}" aria-label=${c}" style="background:$(c)"></button>`).join("");
-
