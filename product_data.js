@@ -130,7 +130,12 @@ products.forEach((product) => {
       </article>`
       
 })
-document.querySelector('.js-product-grid').innerHTML = productsHTML
+const grid = document.querySelector('.js-product-grid');
+if (grid) {
+ grid.innerHTML = productsHTML;
+}else {
+  console.warn('[products] .js-product-grid not found in DOM')
+}
 
 document.addEventListener("click", (e) => {
   const swatch = e.target.closest(".swatch");
@@ -168,9 +173,10 @@ const saveCart = (items) => localStorage.setItem(cart_key, JSON.stringify(items)
 
 let cartItems = loadCart();
 
+
 const updateCartCount = () => {
   const count = cartItems.reduce((sum, item) => sum + (item.qty || 1), 0);
-  const cartLink = document.querySelector('.header-right .bts');
+  const cartLink = document.querySelector('.header-right .bts ');
   if (cartLink) cartLink.textContent = `cart(${count})`;
 };
 

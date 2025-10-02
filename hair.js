@@ -17,4 +17,8 @@ toggleBtn.addEventListener("click", () => {
   navLinks.classList.toggle("open");
 });
       
- 
+ document.addEventListener('DOMContentLoaded', () => {
+  cartItems = loadCart();
+  renderCart();
+  updateCartCount();
+});

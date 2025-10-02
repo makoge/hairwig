@@ -2,12 +2,13 @@
 <html lang="en">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, intial-scale=1.0">
-  <title>confida shop</title>
+  <title>cart page</title>
   <link href="/hair_wig/shop.css" rel="stylesheet" alt="confida-shop">
+  <link href="/hair_wig/cart.css" rel="stylesheet" alt="confida-shop">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  
+
   <body>
-    <header>
+     <header>
 
       <div class="header-left">
         
@@ -43,29 +44,22 @@
       <a href="/hair_wig/cart.html" class="bts" aria-disabled="true">cart(0)</a>
         <button class="intro-button shop-button">contact</button>
     </div>
-
-        
-
     </header>
-    <main class="shop-container">
-      <div class="shop-head">
 
-        <h1>confida shop</h1>
-        <div class="shop-toolbar" role="group" aria-label="sort and filters">
-          <span class="chip" aria-label="true"></span>
-          <span class="chip" aria-label="true" ><span class="dot" style="background: var(--brand);" ></span>Lace front</span>
-          <span class="chip" aria-label="true" ><span class="dot" style="background: var(--ok);"></span>in stock</span>
+    <main class="cart-container">
+      <h1>Your cart</h1>
+      <div class="cart-list js-cart-list"></div>
+
+      <aside class="cart-sumary">
+        <div class="row">
+          <span>Subtotal</span>
+          <strong class="js-subtotal">$0.00</strong>
         </div>
+        <button class="btn-clear js-clear-cart"> Clear cart</button>
+        <button class="btn-checkout" disabled>Checkout(coming soon)</button>
+      </aside>
+    </main>
 
-      </div>
-     
-    <section id="productGrid" class="product-grid js-product-grid" aria-label="products"> 
-
-    
-     
-      
-    </section>
-  </main>
   <footer class="main-footer">
     <div class="footer-grid">
       <div class="first-footer">
@@ -122,7 +116,7 @@
     </div>
      <p class="fifth-footer">(@) CONFIDA 2025</p>
   </footer>
-
+  <script src="cart.js"></script>
   <script src="product_data.js"></script>
   <script src="shop.js"></script>
   </body>
