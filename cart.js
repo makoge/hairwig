@@ -1,21 +1,18 @@
+import { formatCurrency } from "./utils.js";
 
-const cart_key = 'confida_cart_v1';
-const loadCart = () => {
-   try {return JSON.parse(localStorage.getItem(cart_key)) || [];}
-   catch {return [];}
-};
-const saveCart = (items) => localStorage.setItem(cart_key, JSON.stringify(items));
+import { updateCartCount} from "./utils.js";
+import { loadCart } from "./utils.js";
+
+import {
+  cart_key} from "./utils.js";
+
+import { saveCart } from "./utils.js";
 
 let cartItems = loadCart();
 
-const formatCurrency = (n, currency = "EUR", locale = "en-EE") =>
-  new Intl.NumberFormat(locale, {style: "currency", currency}).format(n);
 
-const updateCartCount = () => {
-  const count = cartItems.reduce((sum, item) => sum + (item.qty || 1), 0);
-  const cartLink = document.querySelector('.header-right .bts') || document.querySelector('.bts');
-  if (cartLink) cartLink.textContent = `cart(${count})`;
-};
+
+updateCartCount(cartItems);
 
 //RENDER
 
@@ -68,7 +65,7 @@ function renderCart() {
 
   const subtotal = computeSubtotal();
   if(subtotalEl) subtotalEl.textContent = formatCurrency(subtotal);
-  updateCartCount();
+  updateCartCount(cartItems);
 }
 
 //MUTATIONS
@@ -133,7 +130,7 @@ document.addEventListener('click', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
   cartItems = loadCart();
   renderCart();
-  updateCartCount();
+  updateCartCount(cartItems);
 });
 
 

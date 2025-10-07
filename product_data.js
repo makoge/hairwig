@@ -89,13 +89,57 @@ const products =[
     },{
     color:"#d1b38b", label:"Honey blonde", img:"/img/hair_logo.png"
   }]
-  }
+  },
+  {
+  sku:"HW06",
+    name:"red straight wig",
+    price:120,
+    length:"13",
+    category:"human hair",
+    style:"straight",
+    img:"/img/product_1_chocolate.png",
+    imgAlt:"straight human hair",
+    badge:"New",
+    variants:[{
+      color:"#1a1a1a", label:"Natural black", img:"/img/product_1_black.png"
+      },{
+    color:"#571e0fff", label:"Chocolate brown", img:"/img/product_1_chocolate.png"
+    },{
+    color:"#d1b38b", label:"Honey blonde", img:"/img/product_1_honey.png"
+  }]
+  },
+  {
+  sku:"HW06",
+    name:"lace front wave",
+    price:120,
+    length:"13",
+    category:"human hair",
+    style:"straight",
+    img:"/img/product_2_honey.png",
+    imgAlt:"straight human hair",
+    badge:"New",
+    variants:[{
+      color:"#1a1a1a", label:"Natural black", img:"/img/product_2_black.png"
+      },{
+    color:"#571e0fff", label:"Chocolate brown", img:"/img/product_2_chocolate.png"
+    },{
+    color:"#d1b38b", label:"Honey blonde", img:"/img/product_2_honey.png"
+  }]
+  },
 ]
 
 
+import { formatCurrency } from "./utils.js";
 
-const formatCurrency = (n, currency = "EUR", locale = "en-EE") =>
-  new Intl.NumberFormat(locale, {style: "currency", currency}).format(n);
+import { updateCartCount} from "./utils.js";
+
+import { loadCart } from "./utils.js";
+
+import { cart_key } from "./utils.js";
+
+import { saveCart } from "./utils.js";
+
+
 
 const makeSwatches = (variants = []) => variants.map(v =>
   `<button class="swatch" type="button" title="${v.label}"
@@ -134,7 +178,7 @@ const grid = document.querySelector('.js-product-grid');
 if (grid) {
  grid.innerHTML = productsHTML;
 }else {
-  console.warn('[products] .js-product-grid not found in DOM')
+  console.warn('[products] .js-product-grid not found in DOM');
 }
 
 document.addEventListener("click", (e) => {
@@ -164,23 +208,14 @@ document.addEventListener("click", (e) => {
 
 //add to cart code
 
-const cart_key = 'confida_cart_v1';
-const loadCart = () => {
-   try {return JSON.parse(localStorage.getItem(cart_key)) || [];}
-   catch {return [];}
-};
-const saveCart = (items) => localStorage.setItem(cart_key, JSON.stringify(items));
+
+
 
 let cartItems = loadCart();
 
 
-const updateCartCount = () => {
-  const count = cartItems.reduce((sum, item) => sum + (item.qty || 1), 0);
-  const cartLink = document.querySelector('.header-right .bts ');
-  if (cartLink) cartLink.textContent = `cart(${count})`;
-};
 
-updateCartCount();
+updateCartCount(cartItems);
 
 const ensureViewCartLink = (actionsEl) => {
   let view = actionsEl.querySelector('[data-action="view-cart"]');
@@ -212,7 +247,7 @@ const addToCart = (cardEl) => {
     cartItems.push({sku, name, price: priceText, img, variant, qty: 1});
   }
   saveCart(cartItems);
-  updateCartCount();
+  updateCartCount(cartItems);
 
   const addBtn = cardEl.querySelector('[data-action="add-to-cart"]');
   const actionsEl = cardEl.querySelector('.cart-actions');

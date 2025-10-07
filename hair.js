@@ -1,3 +1,12 @@
+import { formatCurrency } from "./utils.js";
+
+import { updateCartCount} from "./utils.js";
+
+import { loadCart } from "./utils.js";
+
+import { cart_key } from "./utils.js";
+
+import { saveCart } from "./utils.js";
 
 window.addEventListener('scroll', 
          function(){
@@ -20,5 +29,6 @@ toggleBtn.addEventListener("click", () => {
  document.addEventListener('DOMContentLoaded', () => {
   cartItems = loadCart();
   renderCart();
-  updateCartCount();
+  updateCartCount(cartItems);
 });
+
