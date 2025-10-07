@@ -1,12 +1,6 @@
-import { formatCurrency } from "./utils.js";
+import { formatCurrency, updateCartCount, loadCart, cart_key, saveCart } from "./utils.js";
 
-import { updateCartCount} from "./utils.js";
-import { loadCart } from "./utils.js";
 
-import {
-  cart_key} from "./utils.js";
-
-import { saveCart } from "./utils.js";
 
 let cartItems = loadCart();
 

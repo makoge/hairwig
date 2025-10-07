@@ -196,6 +196,7 @@ nav a{
   display: flex;
   flex-direction: column;
   transition: transform .2s ease, box-shadow .2s ease, border-c0lor .2s ease;
+  max-height: 600px;
 }
 .product-card:hover{
   transform: translateY(-4px);
@@ -226,8 +227,6 @@ nav a{
   height: 100%;
   object-fit: cover;
   display: block;
-
-
 }
 .badge{
   position: absolute;
@@ -243,10 +242,10 @@ nav a{
   box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
 }
 .cart-body{
-  padding: 14px 14px 16px;
+  padding: 10px 10px 16px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1rem;
 }
 .title-row{
   display: flex;
@@ -268,6 +267,7 @@ nav a{
   display: flex;
   gap: 10px;
   align-items: center;
+  flex-wrap: wrap;
   color: var(--muted);
   font-size: 13px;
 }
@@ -297,16 +297,17 @@ nav a{
 }
 .btn-product{
    text-align: center;
-   padding: 10px 12px;
+   padding: 8px 12px;
    text-decoration: none;
    background: #9aa0a6;
    border-radius: var(--radius);
+   
 }
 .btn-product-ghost{
   align-self: center;
   border-color: rgba(255, 255, 255, .16);
   text-align: center;
-  padding: 10px 12px;
+  padding: 8px 12px;
   text-decoration: none;
   background: #9aa0a6;
   border-radius: var(--radius);

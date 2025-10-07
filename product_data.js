@@ -1,185 +1,14 @@
-const products =[
-  {
-    sku:"HW01",
-    name:"straight human hair",
-    price:186,
-    length:"16",
-    category:"human hair",
-    style:"straight",
-    img:"/img/straight-human-hair.jpeg",
-    imgAlt:"human hair wigs",
-    badge:"New",
-    variants: [{color:"#1a1a1a", label: "Natural black",img:"/img/straight-human-hair.jpeg"},
-     {color:"#4b2e1f", label:"Chocolate brown", img:"/img/hair_logo.png"}, {color:"#d1b38b", label:"Honey blonde", img:"/img/hair_logo.png"}   ]
-  },
-  {
-    sku:"HW02",
-    name:"16 inch wavy human hair",
-    price:186,
-    length:"16",
-    category:"human hair",
-    style:"wavy",
-    img:"/img/wavy-human-hair.jpeg",
-    imgAlt:"wavy human hair",
-    badge:"New",
-    variants: [{color:"#1a1a1a", label: "Natural black",img:"/img/wavy-human-hair.jpeg"},
-     {color:"#4b2e1f", label:"Chocolate brown", img:"/img/hair_logo.png"}, {color:"#d1b38b", label:"Honey blonde", img:"/img/hair_logo.png"}   ]
-    },
-
-  {
-    sku:"HW03",
-    name:"wavy human hair",
-    price:186,
-    length:"13",
-    category:"human hair",
-    style:"wavy",
-    img:"/img/wavy-hair.jpeg",
-    imgAlt:"women wigs",
-    badge:"Trending",
-    variants: [{color:"#1a1a1a", label: "Natural black",img:"/img/wavy-hair.jpeg"},
-     {color:"#4b2e1f", label:"Chocolate brown", img:"/img/hair_logo.png"}, {color:"#d1b38b", label:"Honey blonde", img:"/img/hair_logo.png"}   ]
-
-  },
-  {
-    sku:"HW04",
-    name:"deep wave human hair",
-    price:186,
-    length:"16",
-    category:"human hair",
-    style:"straight",
-    img:"/img/deep-wave.jpeg",
-    imgAlt:"women wigs",
-    badge:"New",
-    variants: [{color:"#1a1a1a", label: "Natural black",img:"/img/deep-wave.jpeg"},
-     {color:"#4b2e1f", label:"Chocolate brown", img:"/img/hair_logo.png"}, {color:"#d1b38b", label:"Honey blonde", img:"/img/hair_logo.png"}   ]
-
-  },
-  {
-    sku:"HW05",
-    name:"red straight wig",
-    price:120,
-    length:"13",
-    category:"human hair",
-    style:"straight",
-    img:"/img/red-straight.jpeg",
-    imgAlt:"straight human hair",
-    badge:"Hot",
-    variants:[{
-      color:"#1a1a1a", label:"Natural black", img:"/img/black_straight.jpeg"
-      },{
-    color:"#4b2e1f", label:"Chocolate brown", img:"/img/red-straight.jpeg"
-    },{
-    color:"#d1b38b", label:"Honey blonde", img:"/img/honey_blonde_straight.jpeg"
-  }]
-  },
-  {
-    sku:"HW05",
-    name:"red straight wig",
-    price:120,
-    length:"13",
-    category:"human hair",
-    style:"straight",
-    img:"/img/straight_hair_wig.jpeg",
-    imgAlt:"straight human hair",
-    badge:"New",
-    variants:[{
-      color:"#1a1a1a", label:"Natural black", img:"/img/straight_hair_wig.jpeg"
-      },{
-    color:"#571e0fff", label:"Chocolate brown", img:"/img/hair_wig_red.jpeg"
-    },{
-    color:"#d1b38b", label:"Honey blonde", img:"/img/hair_logo.png"
-  }]
-  },
-  {
-  sku:"HW06",
-    name:"red straight wig",
-    price:120,
-    length:"13",
-    category:"human hair",
-    style:"straight",
-    img:"/img/product_1_chocolate.png",
-    imgAlt:"straight human hair",
-    badge:"New",
-    variants:[{
-      color:"#1a1a1a", label:"Natural black", img:"/img/product_1_black.png"
-      },{
-    color:"#571e0fff", label:"Chocolate brown", img:"/img/product_1_chocolate.png"
-    },{
-    color:"#d1b38b", label:"Honey blonde", img:"/img/product_1_honey.png"
-  }]
-  },
-  {
-  sku:"HW06",
-    name:"lace front wave",
-    price:120,
-    length:"13",
-    category:"human hair",
-    style:"straight",
-    img:"/img/product_2_honey.png",
-    imgAlt:"straight human hair",
-    badge:"New",
-    variants:[{
-      color:"#1a1a1a", label:"Natural black", img:"/img/product_2_black.png"
-      },{
-    color:"#571e0fff", label:"Chocolate brown", img:"/img/product_2_chocolate.png"
-    },{
-    color:"#d1b38b", label:"Honey blonde", img:"/img/product_2_honey.png"
-  }]
-  },
-]
-
-
-import { formatCurrency } from "./utils.js";
-
-import { updateCartCount} from "./utils.js";
-
-import { loadCart } from "./utils.js";
-
-import { cart_key } from "./utils.js";
-
-import { saveCart } from "./utils.js";
 
 
 
-const makeSwatches = (variants = []) => variants.map(v =>
-  `<button class="swatch" type="button" title="${v.label}"
-  aria-label="${v.label}" style="background:${v.color}" data-img="${v.img}"></button>`
-).join("");
+import { products, formatCurrency, updateCartCount, loadCart, cart_key, saveCart, makeSwatches } from "./utils.js";
 
-let productsHTML = '';
-products.forEach((product) => {
-  productsHTML += `<article class="product-card" data-sku="${product.sku}" data-length="${product.length}" data-style="body wave" data-cap="lace front"> 
-     <div class="cart-media"  aria-label="human hair">
-      <img src="${product.img}" alt="women-wigs" loading="lazy" width="800" height="900" >
-       ${product.badge? `<span class="badge">${product.badge}</span>`: ""} 
-     </div>
-      <div class="cart-body">
-        <div class="title-row"> 
-        <h3 class="title">${product.name}</h3>
-        <div class="price">${formatCurrency(product.price)}</div>
-        </div>
 
-        <div class="meta">
-          <span>16&quot; . Category</span>
-          <span class="dot-sep"></span>
-          <span>${product.category}</span>
-        </div>
-        <div class="swatches" aria-label="available colors">
-            ${makeSwatches(product.variants)}
-        </div>
-        <div class="cart-actions">
-          <a class="btn-product" href="#" data-action="add-to-cart">Add to card</a>
-          <a class="btn-product-ghost" href="#" data-action="Details">Details</a>
-        </div>
-      </article>`
-      
-})
-const grid = document.querySelector('.js-product-grid');
-if (grid) {
- grid.innerHTML = productsHTML;
-}else {
-  console.warn('[products] .js-product-grid not found in DOM');
-}
+
+
+
+
+
 
 document.addEventListener("click", (e) => {
   const swatch = e.target.closest(".swatch");
@@ -212,6 +41,41 @@ document.addEventListener("click", (e) => {
 
 
 let cartItems = loadCart();
+let productsHTML = '';
+products.forEach((product) => {
+  productsHTML += `<article class="product-card" data-sku="${product.sku}" data-length="${product.length}" data-style="body wave" data-cap="lace front"> 
+     <div class="cart-media"  aria-label="human hair">
+      <img src="${product.img}" alt="women-wigs" loading="lazy" width="500" height="500" >
+       ${product.badge? `<span class="badge">${product.badge}</span>`: ""} 
+     </div>
+      <div class="cart-body">
+        <div class="title-row"> 
+        <h3 class="title">${product.name}</h3>
+        <div class="price">${formatCurrency(product.price)}</div>
+        </div>
+      
+        <div class="meta">
+          <span>Category</span>
+          <span>${product.category}</span>
+        </div>
+        <div class="swatches" aria-label="available colors">
+            ${makeSwatches(product.variants)}
+        </div>
+        
+        <div class="cart-actions">
+          <a class="btn-product" href="#" data-action="add-to-cart">Add to card</a>
+          <a class="btn-product-ghost" href="#" data-action="Details">Details</a>
+        </div>
+      </article>`
+      
+})
+
+const grid = document.querySelector('.js-product-grid');
+if (grid) {
+ grid.innerHTML = productsHTML;
+}else {
+  console.warn('[products] .js-product-grid not found in DOM');
+}
 
 
 

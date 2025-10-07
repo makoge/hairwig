@@ -1,12 +1,11 @@
-import { formatCurrency } from "./utils.js";
+import { formatCurrency, 
+  updateCartCount, 
+  loadCart, 
+  cart_key, 
+  saveCart, 
+  products, 
+  makeSwatches } from "./utils.js";
 
-import { updateCartCount} from "./utils.js";
-
-import { loadCart } from "./utils.js";
-
-import { cart_key } from "./utils.js";
-
-import { saveCart } from "./utils.js";
 
 window.addEventListener('scroll', 
          function(){
@@ -26,9 +25,71 @@ toggleBtn.addEventListener("click", () => {
   navLinks.classList.toggle("open");
 });
       
- document.addEventListener('DOMContentLoaded', () => {
+ 
+
+let cartItems = loadCart();
+updateCartCount(cartItems)
+
+document.addEventListener('DOMContentLoaded', () => {
   cartItems = loadCart();
-  renderCart();
   updateCartCount(cartItems);
+const track = document.querySelector('.js-sc-track');
+if (!track){
+  console.warn('[home] .js-sc-track not found - skipping home product render');
+  return;
+}
+
+function cardTemplate(product){
+  return `<article class="sc-card product-card" data-sku="${product.sku}" > 
+       <div class="sc-media cart-media"  aria-label="${product.category}">
+        <img src="${product.img}" alt="${product.imgAlt || product.name}" loading="lazy" width="500" height="500" >
+         ${product.badge? `<span class="sc-badge badge">${product.badge}</span>`: ""} 
+       </div>
+        <div class="sc-body cart-body">
+          <div class="sc-title title-row"> 
+          <h3 class="title">${product.name}</h3>
+          <div class="price">${formatCurrency(product.price)}</div>
+          </div>
+  
+          <div class="sc-meta meta">
+            <span>Category</span>
+            <span>${product.category}</span>
+          </div>
+          <div class="swatches" aria-label="available colors">
+              ${makeSwatches(product.variants)}
+          </div>
+          <div class="sc-actions cart-actions">
+            <a class="btn-product" href="#" data-action="add-to-cart">Add to card</a>
+            <a class="btn-product-ghost" href="#" data-action="Details">Details</a>
+          </div>
+        </article>`;
+}
+const items = products.slice(0, 4);
+track.innerHTML = products.map(cardTemplate).join('');
+
+const prevBtn = document.querySelector('.sc-prev');
+const nextBtn = document.querySelector('.sc-next');
+
+function cardStep(){
+  const first = track.querySelector('.sc-card');
+  const gap = parseFloat(getComputedStyle(track).gap) || 16;
+  return first ? first.getBoundingClientRect().width + gap : 320;
+};
+
+const atStart = () => track.scrollLeft <= 2;
+const atEnd = () => (track.scrollLeft + track.clientWidth) >= (track.scrollWidth - 2);
+ const updateButtons = () => {
+  if (prevBtn) prevBtn.disabled = atStart();
+  if (nextBtn) nextBtn.disabled = atEnd();
+ };
+
+ const scrollByStep = (dir = 1) => {
+  track.scrollBy({ left: cardStepStep()* dir, behavior: 'smooth'});
+ };
+ prevBtn?.addEventListener('click', () => scrollByStep(-1));
+ nextBtn?.addEventListener('resize', updateButtons);
+ updateButtons();
 });
+
+
 
