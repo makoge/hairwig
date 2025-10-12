@@ -64,7 +64,7 @@ products.forEach((product) => {
         
         <div class="cart-actions">
           <a class="btn-product" href="#" data-action="add-to-cart">Add to card</a>
-          <a class="btn-product-ghost" href="#" data-action="Details">Details</a>
+          <a class="btn-product-ghost" href="#" data-action="details">Details</a>
         </div>
       </article>`
       
@@ -140,4 +140,35 @@ document.addEventListener('click', (e) => {
   if (viewBtn){
 
   }
+
+  const viewProduct = (sku, variant=null) => {
+    const url = new URL('/hair_wig/detail.html', window.location.origin);
+    url.searchParams.set('sku', sku);
+    if(variant) url.searchParams.set('variant', variant);
+    window.location.href = url.toString();
+  };
+
+  document.addEventListener('click', (e) => {
+    const mediaImg = e.target.closest('.cart-media img');
+    if(mediaImg){
+      const card = mediaImg.closest('.product-card');
+      if(!card) return;
+      const sku = card.dataset.sku;
+      const selected = card.querySelector('.swatch.selected')?.getAttribute('title') || null;
+      viewProduct(sku, selected);
+      e.preventDefault();
+      return;
+    }
+   const detailsBtn = e.target.closest('[data-action="details"]');
+   if(detailsBtn){
+    const card = detailsBtn.closest('.product-card');
+    if(!card) return;
+    const sku = card.dataset.sku;
+    const selected = card.querySelector('.swatch.selected')?.getAttribute('title')  || null;
+    viewProduct(sku, selected);
+    e.preventDefault();
+   }
+  });
 });
+
+ 

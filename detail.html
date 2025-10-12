@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>view products</title>
+  <link rel="stylesheet" href="detail.css">
+  <link rel="stylesheet" href="shop.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+<header>
+
+      <div class="header-left">
+        
+        <img src="\img\hair_logo.png" alt="nana-hair-logo">
+      </div>
+      <div class="mobile-menu-wrapper">
+      <button  class="menu-toggle" aria-label="Toggle-menu">
+      &#9776;</button>
+      <nav   class="nav-links">
+        <ul>
+
+        <li> <a href="index.html">Home</a> </li>
+        
+        <li class="nav-item dropdown"> <a href="/hair_wig/shop.html" class="dropbtn">Products</a>
+        <div class="dropdown-content">
+          <ul>
+          <li> <a href="products/human_hair.html">Human Hair</a> </li>
+          <li> <a href="products/lace_wig.html">Lace wig</a> </li>
+          <li> <a href="products/monofilament.html">Monofilament</a> </li>
+          <li> <a href="products/accessories.html">Accessories</a> </li>
+          </ul>
+        </div>
+         </li>
+      
+        <li> <a href="blog.html">Treat wig</a> </li>
+        <li> <a href="contact_us.html">Contact Us</a> </li>
+
+        </ul>
+        
+      </nav>
+    </div>
+      
+    <div class="header-right">
+      <a href="/hair_wig/cart.html" class="bts" aria-disabled="true">cart(0)</a>
+        <button class="intro-button shop-button">contact</button>
+    </div>  
+
+    </header>
+    <main class="product-detail">
+      <a class="back-btn" href="/hair_wig/shop.html">Back</a>
+      <h2 id="pd-title"></h2>
+      <div class="pd-grid">
+        <div>
+          <div class="pd-main"><img id="pd-main-img" alt=""></div>
+          <div id="pd-thumbs" class="pd-thumbs" aria-label="product gallery"></div>
+        </div>
+      
+      <div>
+        <div id="pd-price"></div>
+        <div id="pd-meta"></div>
+        <div id="pd-colors" class="swatches" aria-label="available colors"></div>
+        </div>
+        <div >
+          <a id="pd-add" class="btn-product">Add to cart</a>
+        </div>
+       
+      </div>
+    </main>
+    <footer class="main-footer">
+    <div class="footer-grid">
+      <div class="first-footer">
+        <h4>Join Confihair</h4>
+        <div  class="subscribe js-subscribe">
+        <input type="email" id="email-input" placeholder="enter your email" onkeydown="callEvent(event)">
+        <button class="subscribe-button" onclick="subscribe();">Subscribe</button>
+      </div>
+      <div class="social-icons">
+        <a href="https://instagram.com/" target="_blank" aria-label="instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://x.com/" target="_blank" aria-label="x">
+          <i class="fab fa-x"></i>
+        </a>
+        <a href="https://facebook.com/" target="_blank" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://youtube.com/" target="_blank" aria-label="x">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div> 
+      
+      </div>
+    
+      <div class="second-footer">
+        <h3>Help and Suport</h3>
+        <ul>
+          <li><a href="products/human_hair.html">Track my order</a></li>
+          <li><a href="products/lace_wig.html">Returns & Exchange</a></li>
+          <li><a href="products/monofilament.html">Change & Cancel</a></li>
+          <li><a href="#">Customer Reviews</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+        
+      </div>
+      <div class="third-footer">
+        <h4>About Confida</h4>
+        <li><a href="products/human_hair.html">Our Values</a></li>
+        <li><a href="products/lace_wig.html">Innovation</a></li>
+        <li><a href="products/monofilament.html">24 hours support</a></li>
+        <li><a href="#">Customer Reviews</a></li>
+        <li><a href="#">FAQ</a></li>
+
+      </div>
+      <div class="fourth-footer">
+        <h4>About Confida</h4>
+        <li><a href="products/human_hair.html">Our Values</a></li>
+        <li><a href="products/lace_wig.html">Innovation</a></li>
+        <li><a href="products/monofilament.html">24 hours support</a></li>
+        <li><a href="#">Customer Reviews</a></li>
+        <li><a href="#">FAQ</a></li>
+      </div>
+    </div>
+     <p class="fifth-footer">(@) CONFIDA 2025</p>
+  </footer>
+
+  <script type="module" src="/hair_wig/detail.js"></script>
+  <script type="module" src="/hair_wig/cart.js"></script>
+  <script type="module" src="/hair_wig/product_data.js"></script>
+  <script type="module" src="/hair_wig/hair.js"></script>
+</body>
+<script></script>
+</html>

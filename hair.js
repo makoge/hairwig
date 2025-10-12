@@ -60,7 +60,7 @@ function cardTemplate(product){
           </div>
           <div class="sc-actions cart-actions">
             <a class="btn-product" href="#" data-action="add-to-cart">Add to card</a>
-            <a class="btn-product-ghost" href="#" data-action="Details">Details</a>
+            <a class="btn-product-ghost" href="#" data-action="details">Details</a>
           </div>
         </article>`;
 }
