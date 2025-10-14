@@ -521,6 +521,79 @@ nav a{
   color: rgb(126, 91, 3);
 }
 
+.quick-buy {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.qb-item {
+  flex: 1;
+  position: relative;
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  cursor: pointer;
+}
+
+.qb-left {
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                    url('/img/frontal_wig.jpg');
+}
+
+.qb-right {
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                    url('/img/wig_accessories.jpg');
+}
+
+.qb-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  backdrop-filter: brightness(0.9);
+  transition: backdrop-filter 0.3s ease;
+}
+
+.qb-item:hover {
+  transform: scale(1.02);
+  filter: brightness(1.1);
+}
+
+.qb-overlay h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.qb-btn {
+  background: #dda0dd;
+  color: #111;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.qb-btn:hover {
+  background: #fff;
+  color: #111;
+  transform: translateY(-2px);
+}
+
+
 .contact-container{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -737,8 +810,42 @@ nav a{
 .contact-page h2{
   font-size: 40px;
 }
-.F
 
+
+@media(max-width: 1090px){
+
+  .gallery-container{
+  grid-template-columns: 1fr;
+  justify-items: center;
+  padding: 1rem 1rem;
+}
+
+ .left-gallery, .intro-para{
+  margin: 0 auto;
+  width: 90%;
+  padding: 1rem;
+}
+.capture-cards{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+
+}
+.capture-card:nth-child(1){
+  grid-column: 1;
+  grid-row: 1;
+}
+.capture-card:nth-child(2){
+  grid-column: 2;
+  grid-row: 1;
+}
+.capture-card:nth-child(3){
+  grid-column: 1/ span 2;
+  grid-row: 2;
+  justify-self: center;
+  width: 60%;  
+}
+}
 
 
 
@@ -826,17 +933,31 @@ nav a{
     text-align: center;
     
 }
-.gallery-container{
+.capture-cards{
   grid-template-columns: 1fr;
-  
-  padding: 1rem 1rem 0 1rem;
+  justify-items: center;
+  padding: 1rem 1rem;
 }
-.left-gallery, .intro-para{
-  margin: 0 auto;
-  width: 100%;
-  padding: 1rem;
+.capture-card:nth-child(1){
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: center;
+  width: 80%;
+}
+.capture-card:nth-child(2){
+  grid-column: 1;
+  grid-row: 2;
+  justify-self: center;
+  width: 80%;
+}
+.capture-card:nth-child(3){
+  grid-column: 1;
+  grid-row: 3;
+  justify-self: center;
+  width: 80%;
+   
+}
 
-}
 .gallery{
   margin-right: 0;
   gap: 0.75rem;
@@ -850,25 +971,39 @@ nav a{
   margin-bottom: 1rem;
   font-size: 1rem;
 }
-.sc-track{
-  grid-auto-columns: 45%;
-}
+
 .capture-cards{
   grid-template-columns: 1fr;
   gap: 1rem;
 
 }
-.capture-cards p{
 
-}
 .capture{
   padding: 2.2rem 1rem;
   max-width: 90%;
+}
+.sc-track{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 48px) / 2);
+  
+}
+.contact-container{
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 100%;
 }
 .footer-grid{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+
+.quick-buy {
+    flex-direction: column;
+  }
+  .qb-item {
+    min-height: 300px;
+  }
 
 }
 
@@ -926,7 +1061,7 @@ nav a{
   }
   .capture{
     padding: 0.5rem 0.5rem;
-    max-width: 90%;
+    max-width: 100%;
     
   }
   .capture-card{
@@ -954,6 +1089,12 @@ nav a{
     display: grid;
     grid-template-columns: 1fr;
   }
+  .sc-track{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 48px) / 1);
+  
+}
 
 }
 
