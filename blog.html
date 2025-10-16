@@ -3,9 +3,13 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, intial-scale=1.0">
-    <title>Blog page</title>
-    <link  href="/hair_wig/hair.css" rel="stylesheet" alt="hair wig" >
+    <title>Contact us Confida</title>
+    <link  href="./shop.css" rel="stylesheet" alt="hair wig" >
+    <link href="./hair.css" rel="stylesheet" alt="contact us">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   </head>
+
   <body>
     <header>
       <div class="header-left">
@@ -20,17 +24,18 @@
 
         <li> <a href="index.html">Home</a> </li>
         
-        <li class="nav-item dropdown"> <a href="" class="dropbtn">Products</a>
+        <li class="nav-item dropdown"> <a href="/hair_wig/shop.html" class="dropbtn">Products</a>
         <div class="dropdown-content">
           <ul>
           <li> <a href="products/human_hair.html">Human Hair</a> </li>
           <li> <a href="products/lace_wig.html">Lace wig</a> </li>
           <li> <a href="products/monofilament.html">Monofilament</a> </li>
+          <li> <a href="products/accessories.html">Accessories</a> </li>
           </ul>
         </div>
          </li>
       
-        <li> <a href="blog.html">Treat wig</a> </li>
+        <li> <a href="blog.html">treat wig</a> </li>
         <li> <a href="contact_us.html">Contact</a> </li>
 
         </ul>
@@ -39,9 +44,73 @@
     </div>
       
     <div class="header-right">
-        <p>1237748999</p>
+      <a href="/hair_wig/cart.html" class="bts" aria-disabled="true">cart (0)</a>
+        <button class="">contact us</button>
     </div>
 
     </header>
+       
+
+  <footer class="main-footer">
+    <div class="footer-grid">
+      <div class="first-footer">
+        <h4>Join Confihair</h4>
+        <div  class="subscribe js-subscribe">
+        <input type="email" id="email-input" placeholder="enter your email" onkeydown="callEvent(event)">
+        <button class="subscribe-button" onclick="subscribe();">Subscribe</button>
+      </div>
+      <div class="social-icons">
+        <a href="https://instagram.com/" target="_blank" aria-label="instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://x.com/" target="_blank" aria-label="x">
+          <i class="fab fa-x"></i>
+        </a>
+        <a href="https://facebook.com/" target="_blank" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://youtube.com/" target="_blank" aria-label="x">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div> 
+      
+      </div>
+    
+      <div class="second-footer">
+        <h3>Help and Suport</h3>
+        <ul>
+          <li><a href="products/human_hair.html">Track my order</a></li>
+          <li><a href="products/lace_wig.html">Returns & Exchange</a></li>
+          <li><a href="products/monofilament.html">Change & Cancel</a></li>
+          <li><a href="#">Customer Reviews</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+        
+      </div>
+      <div class="third-footer">
+        <h4>About Confida</h4>
+        <li><a href="products/human_hair.html">Our Values</a></li>
+        <li><a href="products/lace_wig.html">Innovation</a></li>
+        <li><a href="products/monofilament.html">24 hours support</a></li>
+        <li><a href="#">Customer Reviews</a></li>
+        <li><a href="#">FAQ</a></li>
+
+      </div>
+      <div class="fourth-footer">
+        <h4>About Confida</h4>
+        <li><a href="products/human_hair.html">Our Values</a></li>
+        <li><a href="products/lace_wig.html">Innovation</a></li>
+        <li><a href="products/monofilament.html">24 hours support</a></li>
+        <li><a href="#">Customer Reviews</a></li>
+        <li><a href="#">FAQ</a></li>
+      </div>
+    </div>
+     <p class="fifth-footer">(@) CONFIDA 2025</p>
+  </footer>
+     
+
+<script type="module" src="product_data.js"></script>
+  <script type="module" src="shop.js"></script>
+  </body>
   </body>
 </html>
