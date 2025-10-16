@@ -142,7 +142,7 @@ document.addEventListener('click', (e) => {
   }
 
   const viewProduct = (sku, variant=null) => {
-    const url = new URL('/hair_wig/detail.html', window.location.origin);
+    const url = new URL('./detail.html', window.location.origin);
     url.searchParams.set('sku', sku);
     if(variant) url.searchParams.set('variant', variant);
     window.location.href = url.toString();
