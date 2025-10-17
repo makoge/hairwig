@@ -36,8 +36,6 @@ header.scrolled{
 
 .header-left{
   display: block;
-
-  margin-left: 50px;
 }
 
 .header-left img{
@@ -441,24 +439,25 @@ justify-self: center;
 
 @media(max-width: 768px){
   
-  header{
+header{
     position: sticky;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
   }
   .header-left{
-    margin-left: 1rem;
+    margin-right: auto;
+    
   }
-  .mobile-menu-wrapper{ 
-  }
+  
   .menu-toggle{
     display: block ;
-    background: none;
     border: none;
+    position: relative;
     font-size: 1.8rem;
     color: white;
     cursor: pointer;
-    margin-left:1rem ;
-    
+    margin:0 auto; 
   }
   .nav-links{
     background-color: rgba(54, 52, 52, 0.8);
@@ -499,6 +498,9 @@ justify-self: center;
     justify-content: center;
     border-radius: 9px;
   }
+  .header-right{
+    margin-left: auto;
+  }
   .product-grid{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -512,7 +514,14 @@ justify-self: center;
 }
 
 @media(max-width: 480px) {
+  .menu-toggle{
+    margin: 0 auto;
+    padding-right: 4rem;
+  }
   .header-right button{
+    display: none;
+  }
+  .shop-toolbar{
     display: none;
   }
   .product-grid{
