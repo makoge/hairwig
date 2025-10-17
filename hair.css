@@ -1013,6 +1013,9 @@ nav a{
   padding: 2.2rem 1rem;
   max-width: 90%;
 }
+.capture-card{
+  height: 150px;
+}
 .sc-track{
   display: grid;
   grid-auto-flow: column;
@@ -1035,6 +1038,13 @@ nav a{
   .qb-item {
     min-height: 300px;
   }
+  .qb-left {
+   margin: 1rem 0.5rem;
+}
+
+.qb-right {
+  margin: 1rem 0.5rem;
+}
 
 }
 
@@ -1130,6 +1140,12 @@ nav a{
     width: 30px;
     height: 30px;
   }
+  .sc-track{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 50px) / 1);
+  
+}
   .footer-grid{
     display: grid;
     grid-template-columns: 1fr;
