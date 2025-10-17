@@ -24,6 +24,31 @@ const navLinks = document.querySelector(".nav-links");
 toggleBtn.addEventListener("click", () => {
   navLinks.classList.toggle("open");
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const galleryImages = document.querySelectorAll('.gallery img');
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const lightboxClose = document.getElementById("lightbox-close");
+
+  galleryImages.forEach(img => {
+    img.addEventListener("click", () =>{
+      lightbox.classList.add("show");
+      lightboxImg.src=img.src;
+      lightboxImg.alt = img.alt || "expanded image";
+    });
+    
+  });
+  lightboxClose.addEventListener("click", ()=> lightbox.classList.remove("show"));
+  lightbox.addEventListener("click", (e) =>{
+    if (e.target === lightbox) lightbox.classList.remove("show");
+
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") lightbox.classList.remove("show");
+
+  });
+});
       
  
 
