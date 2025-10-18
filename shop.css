@@ -347,10 +347,13 @@ nav a{
 
 .first-footer{
   justify-items: center;
+  background-color: rgba(0, 0, 0, 0.65);
+  padding: 40px 0;
+  border-radius: 10px;
 }
 .social-icons a{
   font-size: 24px;
-  color: black;
+  color: #eee;
   margin: 0 1rem;
   transition: color 0.3s ease;
   
@@ -361,7 +364,9 @@ nav a{
 }
 .second-footer{
   justify-items: center;
-  
+  background-color: rgba(0, 0, 0, 0.65);
+  padding: 40px 0;
+  border-radius: 10px;
 }
 .second-footer h4{
   margin-bottom: 0.75rem;
@@ -376,6 +381,9 @@ nav a{
 }
 .third-footer{
   justify-items: center;
+  background-color: rgba(0, 0, 0, 0.65);
+  padding: 40px 0;
+  border-radius: 10px;
 }
 .third-footer li{
   list-style: none;
@@ -383,6 +391,9 @@ nav a{
 }
 .fourth-footer{
   justify-items: center;
+  background-color: rgba(0, 0, 0, 0.65);
+  padding: 40px 0;
+  border-radius: 10px;
 }
 .fourth-footer li{
   justify-items:center ;
