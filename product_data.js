@@ -10,30 +10,7 @@ import { products, formatCurrency, updateCartCount, loadCart, cart_key, saveCart
 
 
 
-document.addEventListener("click", (e) => {
-  const swatch = e.target.closest(".swatch");
-  if (!swatch) return;
 
-  const card = swatch.closest(".product-card");
-  const imgEl = card.querySelector(".cart-media img");
-  const newSrc = swatch.dataset.img;
-  const colorLabel = swatch.getAttribute("title") || "variant";
-
-  if (newSrc && imgEl) {
-    const preload = new Image();
-    preload.onload = () => {imgEl.src = newSrc;};
-    preload.src = newSrc;
-    const title = card.querySelector(".title")?.textContent?.trim() || "product";imgEl.alt = `${title} - ${colorLabel}`;
-  }
-
-  const group = swatch.parentElement;
-  group.querySelectorAll(".swatch").forEach(b => {
-    b.classList.remove("selected");
-    b.setAttribute("aria-pressed", "false");
-  });
-  swatch.classList.add("selected");
-  swatch.setAttribute("aria-pressed", "true");
-});
 
 //add to cart code
 
@@ -82,6 +59,7 @@ if (grid) {
 updateCartCount(cartItems);
 
 const ensureViewCartLink = (actionsEl) => {
+  if (!actionsEl) return;
   let view = actionsEl.querySelector('[data-action="view-cart"]');
   if(!view){
     view = document.createElement('a');
@@ -128,19 +106,9 @@ const addToCart = (cardEl) => {
   if (actionsEl) ensureViewCartLink(actionsEl);
 };
 
-document.addEventListener('click', (e) => {
-  const addBtn = e.target.closest('[data-action="add-to-cart"]');
-  if (addBtn) {
-    e.preventDefault();
-    const card = addBtn.closest('.product-card');
-    if (card) addToCart(card);
-    return;
-  }
-  const viewBtn = e.target.closest('[data-action="view-cart"]');
-  if (viewBtn){
 
-  }
-
+  
+  
   const viewProduct = (sku, variant=null) => {
     const url = new URL('./detail.html', window.location.origin);
     url.searchParams.set('sku', sku);
@@ -148,8 +116,57 @@ document.addEventListener('click', (e) => {
     window.location.href = url.toString();
   };
 
-  document.addEventListener('click', (e) => {
-    const mediaImg = e.target.closest('.cart-media img');
+
+document.addEventListener("click", (e) => {
+  const swatch = e.target.closest(".swatch");
+  if (swatch){
+
+  const card = swatch.closest(".product-card");
+  if(!card) return;
+
+  const imgEl = card.querySelector(".cart-media img");
+  const newSrc = swatch.dataset.img;
+  const colorLabel = swatch.getAttribute("title") || "variant";
+
+  if (newSrc && imgEl) {
+    const preload = new Image();
+    preload.onload = () => {imgEl.src = newSrc;};
+    preload.src = newSrc;
+    const title = card.querySelector(".title")?.textContent?.trim() || "product";imgEl.alt = `${title} - ${colorLabel}`;
+  }
+
+  const group = swatch.parentElement;
+  if(group){
+  group.querySelectorAll(".swatch").forEach(b => {
+    b.classList.remove("selected");
+    b.setAttribute("aria-pressed", "false");
+  });
+  }
+  swatch.classList.add("selected");
+  swatch.setAttribute("aria-pressed", "true");
+  return;
+  }
+
+
+  const addBtn = e.target.closest('[data-action="add-to-cart"]');
+  if (addBtn) {
+    e.preventDefault();
+    const card = addBtn.closest('.product-card');
+    if (card) addToCart(card);
+    return;
+  }
+
+  const detailsBtn = e.target.closest('[data-action="details"]');
+   if(detailsBtn){
+    const card = detailsBtn.closest('.product-card');
+    if(!card) return;
+    const sku = card.dataset.sku;
+    const selected = card.querySelector('.swatch.selected')?.getAttribute('title')  || null;
+    viewProduct(sku, selected);
+    e.preventDefault();
+   }
+
+   const mediaImg = e.target.closest('.cart-media img');
     if(mediaImg){
       const card = mediaImg.closest('.product-card');
       if(!card) return;
@@ -159,16 +176,7 @@ document.addEventListener('click', (e) => {
       e.preventDefault();
       return;
     }
-   const detailsBtn = e.target.closest('[data-action="details"]');
-   if(detailsBtn){
-    const card = detailsBtn.closest('.product-card');
-    if(!card) return;
-    const sku = card.dataset.sku;
-    const selected = card.querySelector('.swatch.selected')?.getAttribute('title')  || null;
-    viewProduct(sku, selected);
-    e.preventDefault();
-   }
-  });
+   
 });
 
  
