@@ -1,4 +1,4 @@
-import { products, formatCurrency, updateCartCount, loadCart, cart_key, saveCart, makeSwatches } from "./utils.js";
+import { products, formatCurrency/*, updateCartCount, loadCart, cart_key, saveCart, makeSwatches*/ } from "./utils.js";
 
 const $ = (sel) => document.querySelector(sel);
 

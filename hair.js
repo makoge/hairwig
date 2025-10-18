@@ -17,20 +17,25 @@ window.addEventListener('scroll',
           }
          });
 
-
+document.addEventListener("DOMContentLoaded", () =>{
 const toggleBtn = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
-
-toggleBtn.addEventListener("click", () => {
-  navLinks.classList.toggle("open");
+if (toggleBtn && navLinks){
+  toggleBtn.addEventListener("click", () =>{
+    navLinks.classList.toggle("open");
+  });
+}else{
+  console.info("[hair] menu-toggle or navLinks not found- skipping toggle");
+}
 });
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const galleryImages = document.querySelectorAll('.gallery img');
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
   const lightboxClose = document.getElementById("lightbox-close");
-
+if(galleryImages.length && lightbox && lightboxImg && lightboxClose){
   galleryImages.forEach(img => {
     img.addEventListener("click", () =>{
       lightbox.classList.add("show");
@@ -48,6 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === "Escape") lightbox.classList.remove("show");
 
   });
+  }else if(galleryImages.length){
+   console.info( "[hair] lightbox element missing -gallery click disabled")
+  }
 });
       
  
@@ -112,8 +120,13 @@ const atEnd = () => (track.scrollLeft + track.clientWidth) >= (track.scrollWidth
   track.scrollBy({ left: cardStepStep()* dir, behavior: 'smooth'});
  };
  prevBtn?.addEventListener('click', () => scrollByStep(-1));
- nextBtn?.addEventListener('resize', updateButtons);
- updateButtons();
+ nextBtn?.addEventListener('click', () => scrollByStep(1));
+
+trackrack.addEventListener("scroll", updateButtons, { passive: true });
+  window.addEventListener("resize", updateButtons);
+  
+  updateButtons();
+
 });
 
 

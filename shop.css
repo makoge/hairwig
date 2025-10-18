@@ -44,6 +44,7 @@ header.scrolled{
   width: auto;
   object-fit: contain;
   padding-left: 50px;
+  border-radius: 20px;
   
 }
 .mobile-menu-wrapper{
@@ -354,7 +355,7 @@ nav a{
 .social-icons a{
   font-size: 24px;
   color: #eee;
-  margin: 0 1rem;
+  margin: 1rem 1rem;
   transition: color 0.3s ease;
   
 }
