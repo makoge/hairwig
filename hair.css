@@ -1009,7 +1009,7 @@ nav a{
 .intro-para p{
   line-height: 1.6;
   margin-bottom: 1rem;
-  font-size: 0.8rem;
+  font-size: 0.5rem;
 }
 
 .capture-cards{
@@ -1152,7 +1152,7 @@ nav a{
   .sc-track{
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: calc((100% - 50px) / 1);
+  grid-auto-columns: calc((100% - 48px) / 1);
   
 }
   .footer-grid{
