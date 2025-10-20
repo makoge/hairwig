@@ -348,7 +348,7 @@ nav a{
 
 .first-footer{
   justify-items: center;
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(54, 52, 52, 0.8);
   padding: 40px 0;
   border-radius: 10px;
 }
@@ -365,7 +365,7 @@ nav a{
 }
 .second-footer{
   justify-items: center;
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(54, 52, 52, 0.8);
   padding: 40px 0;
   border-radius: 10px;
 }
@@ -382,7 +382,7 @@ nav a{
 }
 .third-footer{
   justify-items: center;
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(54, 52, 52, 0.8);
   padding: 40px 0;
   border-radius: 10px;
 }
@@ -392,7 +392,7 @@ nav a{
 }
 .fourth-footer{
   justify-items: center;
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(54, 52, 52, 0.8);
   padding: 40px 0;
   border-radius: 10px;
 }
@@ -407,7 +407,7 @@ nav a{
 .fifth-footer{
 justify-self: center;
   margin-top: 1.2rem;
-  background-color: #0a0a0a;
+  background-color: rgba(54, 52, 52, 0.8);
   color: antiquewhite;
   border-radius: 0.65rem;
   padding: 1rem 1rem;
