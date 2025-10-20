@@ -345,7 +345,7 @@ nav a{
 
 }
 .intro-para h2{
-  padding: 3rem 1.6rem 1rem 1.6rem;
+  padding: 2rem 1.6rem 1rem 1.6rem;
 
 }
 .intro-para p{
@@ -1009,7 +1009,7 @@ nav a{
 .intro-para p{
   line-height: 1.6;
   margin-bottom: 1rem;
-  font-size: 0.5rem;
+  font-size: 1rem;
 }
 
 .capture-cards{
@@ -1083,7 +1083,7 @@ nav a{
   }
   .intro-left p{
     line-height: 1.6;
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
   .intro-button{
     font-size: 0.9rem;
