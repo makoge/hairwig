@@ -873,9 +873,11 @@ nav a{
 @media(max-width: 768px){
   
   header{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     position: sticky;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
 
   }
   .header-left{
@@ -890,8 +892,6 @@ nav a{
     font-size: 1.8rem;
     color: white;
     cursor: pointer;
-    margin:0 auto;
-    
     
   }
   .nav-links{
@@ -934,7 +934,15 @@ nav a{
     border-radius: 9px;
   }
   .header-right{
-    margin-left: auto;
+    order: 2;
+    justify-content: flex-start;
+    margin-left: auto; 
+  }
+  .header-right button{
+    padding-right: 2rem;
+  }
+  .mobile-menu-wrapper{
+    order: 3;
   }
   .intro{
     flex-direction: column;
@@ -1060,7 +1068,13 @@ nav a{
 @media(max-width: 480px) {
   .menu-toggle{
     margin: 0 auto;
-    padding-right: 4rem;
+  }
+  .mobile-menu-wrapper{
+    margin-left: auto;
+  }
+  
+  .bts{
+    padding-right: 2rem;
   }
   .header-right button{
     display: none;

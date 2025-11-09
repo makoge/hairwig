@@ -18,7 +18,8 @@ header{
   background-color:  rgba(54, 52, 52, 0.95);
   height: 60px;
   position: sticky;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
@@ -27,6 +28,7 @@ header{
   z-index: 1000;
   transition: all 0.3 ease;
   backdrop-filter: blur(0px);
+  gap: 20px;
 }
 header.scrolled{
   background-color: rgba(54, 52, 52, 0.95) ;
@@ -452,14 +454,16 @@ justify-self: center;
 @media(max-width: 768px){
   
 header{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     position: sticky;
     flex-wrap: wrap;
-    justify-content: space-between;
+    align-items: center;
+    
 
   }
   .header-left{
-    margin-right: auto;
-    
+    margin-right: auto; 
   }
   
   .menu-toggle{
@@ -469,7 +473,8 @@ header{
     font-size: 1.8rem;
     color: white;
     cursor: pointer;
-    margin:0 auto; 
+    justify-self: end;
+    
   }
   .nav-links{
     background-color: rgba(54, 52, 52, 0.8);
@@ -511,8 +516,17 @@ header{
     border-radius: 9px;
   }
   .header-right{
-    margin-left: auto;
+    order: 2;
+    justify-content: flex-start;
+    margin-left: auto; 
   }
+  .header-right button{
+    padding-right: 2rem;
+  }
+  .mobile-menu-wrapper{
+    order: 3;
+  }
+  
   .product-grid{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -526,9 +540,12 @@ header{
 }
 
 @media(max-width: 480px) {
-  .menu-toggle{
-    margin: 0 auto;
-    padding-right: 4rem;
+  .mobile-menu-wrapper{
+    margin-left: auto;
+  }
+  
+  .bts{
+    padding-right: 2rem;
   }
   .header-right button{
     display: none;
