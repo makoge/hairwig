@@ -1,3 +1,17 @@
+:root{
+  --ok: #22c55e;
+  --brand: #dda0dd;
+  --shadow: 0 10px 30px rgba(0, 0, 0, .35 );
+  --card:#15161a;
+  --radius: 16px;
+  --accent: #ffd166;
+  --muted: #9aa0a6;
+  --buttrans: background-color 0.2s ease,
+  color 0.2s ease,
+  border-color 0.3s ease,
+  box-shadow 0.3s ease;
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -140,7 +154,6 @@ nav a{
   display: flex;
   align-items: center;
   gap: 10px;
-  a
   
 }
 .header-right button{
@@ -152,6 +165,11 @@ nav a{
   border: none;
   margin-left: 8px;
   cursor: pointer;
+  transition: var(--buttrans);
+}
+.header-right button:hover{
+   border-color: #dda0dd;
+  box-shadow: 0 0 8px #dda0dd;
 }
 .header-right a{
   text-decoration: none;

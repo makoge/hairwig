@@ -1,0 +1,12 @@
+{
+  "name": "hair_wig",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "hair wig website code",
+  "main": "cart.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Makoge",
+  "license": "MIT"
+}
