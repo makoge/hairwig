@@ -82,6 +82,19 @@ header.scrolled{
     padding: 8px 12px;
     display: inline-block;
   }
+.submenu-wrapper{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.submenu-toggle{
+  display: none;
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
 .dropdown-content{
   display: none;
   position: absolute;
@@ -479,7 +492,20 @@ header{
   .header-left{
     margin-right: auto; 
   }
-  
+  .dropdown{
+    position: static;
+  }
+  .nav-links{
+    flex-direction: column;
+    gap: 0;
+  }
+  .nav-links li a{
+    display: block;
+    padding: 0.7rem 1rem;
+  }
+  .dropdown:hover .dropdown-content{
+    display: block;
+  }
   .menu-toggle{
     display: block ;
     border: none;
@@ -489,6 +515,40 @@ header{
     cursor: pointer;
     justify-self: end;
     
+  }
+  .submenu-toggle{
+    display: inline-block;
+    font-size: 2.5rem;
+  }
+  .submenu-wrapper{
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  .dropdown-content{
+    display: none;
+    position: static;
+    width: 100%;
+    margin: 0; 
+    padding: 0;
+}
+.dropdown-content ul{
+  list-style: none;
+  margin:  0 ;
+  padding: 0 ;
+  font-size: 0.9rem;
+}
+.dropdown-content li{
+  padding: 0;
+  margin: 0;
+}
+.dropdown-content a{
+  padding: 0;
+}
+
+
+.dropdown-content.open{
+    display: block;
   }
   .nav-links{
     background-color: rgba(54, 52, 52, 0.8);

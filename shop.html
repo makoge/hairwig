@@ -21,7 +21,11 @@
 
         <li> <a href="index.html">Home</a> </li>
         
-        <li class="nav-item dropdown"> <a href="./shop.html" class="dropbtn">Products</a>
+        <li class="nav-item dropdown"> 
+          <div class="submenu-warpper">
+          <a href="./shop.html" class="dropbtn">Products</a>
+          <button class="submenu-toggle" aria-label="toggle product categories">+</button>
+          </div> 
         <div class="dropdown-content">
           <ul>
           <li> <a href="products/human_hair.html">Human Hair</a> </li>
@@ -123,8 +127,10 @@
     </div>
      <p class="fifth-footer">(@) CONFIDA 2025</p>
   </footer>
-
+  
+  
   <script type="module" src="product_data.js"></script>
   <script type="module" src="shop.js"></script>
+  
   </body>
 </html>

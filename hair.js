@@ -27,6 +27,17 @@ if (toggleBtn && navLinks){
 }else{
   console.info("[hair] menu-toggle or navLinks not found- skipping toggle");
 }
+
+  const submenuToggle = document.querySelector(".submenu-toggle");
+  const dropdownContent = document.querySelector(".dropdown-content");
+
+  if (submenuToggle && dropdownContent) {
+    submenuToggle.addEventListener("click", function (e) {
+      e.preventDefault();
+      dropdownContent.classList.toggle("open");
+    });
+  }
+
 });
 
 
