@@ -98,7 +98,7 @@ header.scrolled{
   display: none;
   border: none;
   background: transparent;
-  font-size: 2.5rem;
+  font-size: 2rem;
   line-height: 1;
   cursor: pointer;
 }
@@ -916,55 +916,7 @@ nav a{
   .header-left{
     margin-right: auto;
     
-  }
-  .dropdown{
-    position: static;
-  }
-  .nav-links{
-    flex-direction: column;
-    gap: 0;
-  }
-  .nav-links li a{
-    display: block;
-    padding: 0.7rem 1rem;
-  }
-  .submenu-wrapper{
-    display: flex;
-    align-items: center;
-    width: 100%;
-  }
-  .submenu-toggle{
-    display: inline-block;
-    font-size: 2.5rem;
-  }
-  .dropdown:hover .dropdown-content{
-    display: block;
-  }
-  .dropdown-content{
-    display: none;
-    position: static;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-
-}
-.dropdown-content ul{
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  font-size: 0.9rem;
-}
-.dropdown-content li{
-  padding: 0;
-  margin: 0;
-}
-.dropdown-content a{
-  padding: 0;
-  margin: 0;
-}
-.dropdown-content.open{
-  display: block;
-}
+  } 
 .menu-toggle{
     display: block ;
     border: none;
@@ -988,7 +940,7 @@ nav a{
     flex-direction: column;
     text-align: center;
     transition: max-height 0.3s ease;
-
+    gap: 0;
   }
   .nav-links.open {
     max-height: 500px;
@@ -1005,15 +957,48 @@ nav a{
   .nav-links a{
     display: block;
     text-decoration: none;
-    margin: 1rem;
     z-index: 1100;
-    padding: 1rem 1rem;
+    padding: 0.7rem 1rem;
     justify-items: center;
     justify-self: center;
     justify-content: center;
     border-radius: 9px;
   }
-  .header-right{
+  .dropdown{
+    position: static;
+  }
+  .dropdown:hover .dropdown-content{
+    display: block;
+  }
+  .dropdown-content{
+    position: static;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+.dropdown-content ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+}
+.dropdown-content a{
+  padding: 0;
+}
+.dropdown-content.open{
+  display: block;
+}
+.submenu-wrapper{
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  .submenu-toggle{
+    display: inline-block;
+    font-size: 2rem;
+  }
+.header-right{
     order: 2;
     justify-content: flex-start;
     margin-left: auto; 

@@ -92,7 +92,8 @@ header.scrolled{
   display: none;
   border: none;
   background: transparent;
-  font-size: 1.2rem;
+  font-size: 2rem;
+  line-height: 1;
   cursor: pointer;
 }
 .dropdown-content{
@@ -486,25 +487,9 @@ header{
     position: sticky;
     flex-wrap: wrap;
     align-items: center;
-    
-
   }
   .header-left{
     margin-right: auto; 
-  }
-  .dropdown{
-    position: static;
-  }
-  .nav-links{
-    flex-direction: column;
-    gap: 0;
-  }
-  .nav-links li a{
-    display: block;
-    padding: 0.7rem 1rem;
-  }
-  .dropdown:hover .dropdown-content{
-    display: block;
   }
   .menu-toggle{
     display: block ;
@@ -513,42 +498,7 @@ header{
     font-size: 1.8rem;
     color: white;
     cursor: pointer;
-    justify-self: end;
-    
-  }
-  .submenu-toggle{
-    display: inline-block;
-    font-size: 2.5rem;
-  }
-  .submenu-wrapper{
-    display: flex;
-    align-items: center;
-    width: 100%;
-  }
-  .dropdown-content{
-    display: none;
-    position: static;
-    width: 100%;
-    margin: 0; 
-    padding: 0;
-}
-.dropdown-content ul{
-  list-style: none;
-  margin:  0 ;
-  padding: 0 ;
-  font-size: 0.9rem;
-}
-.dropdown-content li{
-  padding: 0;
-  margin: 0;
-}
-.dropdown-content a{
-  padding: 0;
-}
-
-
-.dropdown-content.open{
-    display: block;
+    justify-self: end; 
   }
   .nav-links{
     background-color: rgba(54, 52, 52, 0.8);
@@ -563,7 +513,7 @@ header{
     flex-direction: column;
     align-items: center;
     transition: max-height 0.3s ease;
-
+    gap: 0;
   }
   .nav-links.open {
     max-height: 500px;
@@ -574,20 +524,55 @@ header{
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-  
-
   }
   .nav-links a{
     display: block;
     text-decoration: none;
-    margin: 1.2rem;
     z-index: 1100;
-    padding: 1rem 1rem;
+    padding: 0.7rem 1rem;
     justify-items: center;
     justify-self: center;
     justify-content: center;
     border-radius: 9px;
+  }
+  .dropdown{
+    position: static;
+  }
+  .dropdown:hover .dropdown-content{
+    display: block;
+  }
+  
+.dropdown-content{
+    position: static;
+    width: 100%;
+    left: 0;
+    right: 50%;
+    height: 150px;
+    text-align: center;
+    padding: 0;
+}
+.dropdown-content ul{
+  list-style: none;
+  margin:  0 ;
+  padding-top: 0.5rem;
+  font-size: 0.9rem;
+}
+.dropdown-content a{
+  padding: 0;
+  margin: 0.2rem 0;
+}
+.dropdown-content.open{
+    display: block;
+  }
+  
+  .submenu-wrapper{
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  .submenu-toggle{
+    display: inline-block;
+    font-size: 2rem;
   }
   .header-right{
     order: 2;
