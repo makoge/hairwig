@@ -274,7 +274,6 @@ nav a{
   font-size: 25px;
   line-height: 1.6;
   font-weight: 800;
-
 }
 .gallery{
   display: grid;
@@ -283,7 +282,7 @@ nav a{
   margin: 0.5rem 1rem;
 }
 .gallery img {
-  width: 100%;
+  width: 95%;
   height: 190px;
   object-fit:cover;
   cursor: pointer;
@@ -300,40 +299,6 @@ nav a{
   transform: scale(1.05);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
-/*
-.gallery-item{
-  position: relative;
-}
-.gallery-item.tooltip{
-  position: absolute;
-  top: -10px;
-  left: 50px;
-  transform: translateX(-50%) translateY(-100%);
-  background: rgba(0, 0, 0, 0.85);
-  padding: 6px;
-  border-radius: 4px;
-  display: none;
-  z-index: 10;
-}
-.gallery-item.tooltip.active{
-  display: block;
-}
-.gallery-item.tooltip img{
-  max-width: 180px;
-  max-height: 180px;
-  display: block;
-  object-fit: contain;
-  border-radius: 2px;
-}
-.gallery-item.tooltip.close{
-  position: absolute;
-  top: 4px;
-  right: 6px;
-  font-size: 1.2rem;
-  color: white;
-  cursor: pointer;
-  user-select: none;
-}*/
 .lightbox {
   display: none;
   position: fixed;
@@ -375,9 +340,9 @@ nav a{
   background-color: rgb(54, 52, 52);
   margin: 40px 40px 0 0;
   border-radius: var(--radius);
-
 }
 .intro-para h2{
+  margin-top: 2rem;
   padding: 2rem 1.6rem 1rem 1.6rem;
 
 }
@@ -513,9 +478,9 @@ nav a{
   overflow: hidden;
   padding: 40px 20px;
   text-align: center;
-  max-width: 80%;
+  max-width: 90%;
   margin: 2rem auto;
-  border-radius: 12px;
+  border-radius: var(--radius);
 
 }
 
@@ -538,7 +503,7 @@ nav a{
   background: rgb(54, 52, 52);
   flex: ;
   padding: 1.5rem;
-  border-radius: 12px;
+  border-radius: var(--radius);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2));
   transition: transform .2s, box-shadow .2s;
 
@@ -652,13 +617,13 @@ nav a{
   width: 100%;
   background: rgb(54, 52, 52);
   max-height: 400px;
-  border-radius: 10px;
+  border-radius: var(--radius);
 }
 .right-contact {
   width: 100%;
   background: rgb(54, 52, 52);
   max-height: 400px;
-  border-radius: 10px;
+  border-radius: var(--radius);
 }
 .contact-img img {
   width: 100%;
@@ -1039,13 +1004,29 @@ nav a{
   width: 100%;
   padding: 1rem 1rem;
 }
+.gallery{
+  margin-right: 0;
+  margin-left: 0;
+  gap: 0.75rem;
+}
 .intro-para{
   margin: 1rem 1rem;
   width: 100%;
   padding: 1rem;
   height: 400px;
 }
+.intro-para h2{
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+}
+.intro-para p{
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
 .capture-cards{
+  width: 100%;
+  margin: 1rem 1rem;
   grid-template-columns: 1fr;
   justify-items: center;
   padding: 1rem 1rem;
@@ -1067,33 +1048,13 @@ nav a{
   grid-row: 3;
   justify-self: center;
   width: 80%;
-   
-}
-
-.gallery{
-  margin-right: 0;
-  margin-left: 0;
-  gap: 0.75rem;
-}
-.intro-para h2{
-  margin-bottom: 0.75rem;
-  font-size: 1.5rem;
-}
-.intro-para p{
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-}
-
-.capture-cards{
-  grid-template-columns: 1fr;
-  gap: 1rem;
-
 }
 
 .capture{
   padding: 2.2rem 1rem;
-  max-width: 90%;
+  max-width: 100%;
+  margin: 1rem 1rem;
+  border-radius: var(--radius);
 }
 .capture-card{
   height: 150px;
@@ -1121,11 +1082,21 @@ nav a{
     min-height: 300px;
   }
   .qb-left {
-   margin: 1rem 0.5rem;
+   margin: 1rem 1rem;
+   border-radius: var(--radius);
 }
 
 .qb-right {
-  margin: 1rem 0.5rem;
+  margin: 1rem 1rem;
+  border-radius: var(--radius);
+}
+.contact-img{
+  width: 100%;
+  border-radius: var(--radius);
+}
+.right-contact {
+  width: 100%;
+  border-radius: var(--radius);
 }
 
 }
@@ -1201,11 +1172,13 @@ nav a{
     grid-template-columns: 1fr;
     gap: 1rem;
     align-items: stretch;
+  
   }
   .capture{
     padding: 0.5rem 0.5rem;
     max-width: 100%;
-    
+    margin: 1rem 1rem;
+    border-radius: var(--radius);
   }
   .capture-card{
     display: flex;
@@ -1216,6 +1189,7 @@ nav a{
   }
   .capture h2{
     font-size: 1.5rem;
+    margin-top: 0.7rem;
   }
   .capture p{
     line-height: 1.6;

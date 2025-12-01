@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, intial-scale=1.0">
     <title>Contact us Confida</title>
-    <link  href="./shop.css" rel="stylesheet" alt="hair wig" >
     <link href="./hair.css" rel="stylesheet" alt="contact us">
+    <link  href="./shop.css" rel="stylesheet" alt="hair wig" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   </head>
@@ -24,7 +24,10 @@
 
         <li> <a href="index.html">Home</a> </li>
         
-        <li class="nav-item dropdown"> <a href="./shop.html" class="dropbtn">Products</a>
+        <li class="nav-item dropdown"> <div class="submenu-wrapper">
+          <a href="./shop.html" class="dropbtn">Products</a>
+          <button class="submenu-toggle" aria-label="toggle product categories">+</button>
+          </div> 
         <div class="dropdown-content">
           <ul>
           <li> <a href="products/human_hair.html">Human Hair</a> </li>
@@ -140,9 +143,9 @@
   </footer>
      
 
-<script type="module" src="product_data.js"></script>
-  <script type="module" src="shop.js"></script>
   <script type="module" src="contact.js"></script>
+  <script type="module" src="product_data.js"></script>
+  <script type="module" src="shop.js"></script>
   </body>
   </body>
 </html>
