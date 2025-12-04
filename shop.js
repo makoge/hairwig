@@ -33,3 +33,52 @@ if (toggleBtn && navLinks){
 
 });
 
+
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+};
+
+
+function subscribe (e) {
+    const emailInput= document.getElementById("email-input");
+    const subsbtn= document.querySelector(".subscribe-button");
+    if (!emailInput || !subsbtn) return;
+
+     
+      const email=emailInput.value.trim();
+
+     if(email === ""){
+          emailInput.placeholder="please enter an email";
+          emailInput.classList.add("error");
+          return;
+          
+        }
+
+    if (!isValidEmail(email)) {
+    //emailInput.value = "";
+    emailInput.placeholder = "invalid email address";
+    emailInput.classList.add("error");
+    return;
+      }
+
+
+
+      if(e && e.type === "keydown" ){
+        if(e.key !== "Enter") return;
+        }  
+       
+    
+        
+        subsbtn.textContent = "sent";
+        subsbtn.classList.add("sent"); 
+        
+        emailInput.placeholder = "enter your email";
+
+        emailInput.value="";
+        emailInput.classList.remove("error");
+   };
+   window.subscribe=subscribe;
+
+
+
+

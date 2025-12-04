@@ -36,7 +36,6 @@ header{
 }
 header.scrolled{
   background-color: rgba(54, 52, 52, 0.95) ;
-  height: 50px;
   backdrop-filter: blur(6px);
 }
 
@@ -107,7 +106,7 @@ header.scrolled{
   width: 700px;
   max-width: 120vw;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
+  border-radius: var(--radius);
   padding: .5rem;
   z-index: 1500;
 }
@@ -537,12 +536,10 @@ header{
   }
   .dropdown{
     position: static;
+    margin-left: 0.7rem;
   }
-  .dropdown:hover .dropdown-content{
-    display: block;
-  }
-  
 .dropdown-content{
+    display: none;
     position: static;
     width: 100%;
     left: 0;
@@ -560,6 +557,7 @@ header{
 .dropdown-content a{
   padding: 0;
   margin: 0.2rem 0;
+  text-decoration: underline;
 }
 .dropdown-content.open{
     display: block;
@@ -569,10 +567,12 @@ header{
     display: flex;
     align-items: center;
     width: 100%;
+    gap: 0;
   }
   .submenu-toggle{
-    display: inline-block;
+    display: block;
     font-size: 2rem;
+    margin: 0;
   }
   .header-right{
     order: 2;
