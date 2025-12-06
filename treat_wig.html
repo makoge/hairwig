@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, intial-scale=1.0">
-    <title>Contact us Confida</title>
-    <link  href="./shop.css" rel="stylesheet" alt="hair wig" >
-    <link href="./hair.css" rel="stylesheet" alt="contact us">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+  <title>treat your wig</title>
+  <link href="./treat_wig.css" rel="stylesheet" alt="confida-shop">
+  <link href="./shop.css" rel="stylesheet" alt="confida-shop">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   </head>
-
   <body>
-    <header>
+  <header>
+
       <div class="header-left">
         
         <img onclick="window.location.href='index.html'" src="\img\hair_logo.png" alt="nana-hair-logo">
@@ -24,7 +23,11 @@
 
         <li> <a href="index.html">Home</a> </li>
         
-        <li class="nav-item dropdown"> <a href="/hair_wig/shop.html" class="dropbtn">Products</a>
+        <li class="nav-item dropdown"> 
+          <div class="submenu-wrapper">
+          <a href="./shop.html" class="dropbtn">Products</a>
+          <button class="submenu-toggle" aria-label="toggle product categories">+</button>
+          </div> 
         <div class="dropdown-content">
           <ul>
           <li> <a href="products/human_hair.html">Human Hair</a> </li>
@@ -35,7 +38,7 @@
         </div>
          </li>
       
-        <li> <a href="blog.html">treat wig</a> </li>
+        <li> <a href="blog.html">Treat wig</a> </li>
         <li> <a href="contact_us.html">Contact</a> </li>
 
         </ul>
@@ -44,19 +47,22 @@
     </div>
       
     <div class="header-right">
-      <a href="/hair_wig/cart.html" class="bts" aria-disabled="true">cart (0)</a>
-        <button class="">contact us</button>
-    </div>
-
+      <a href="./cart.html" class="bts" aria-disabled="true">cart(0)</a>
+        <button onclick="window.location.href='contact_us.html'" class="intro-button shop-button">contact us</button>
+    </div>    
     </header>
-       
-
-  <footer class="main-footer">
+      <section class="wig-blog">
+        <div class="blog-content">
+        <h2>Coming Soon</h2>
+        <a href="./shop.html">view products</a>
+        </div>
+      </section>
+    <footer class="main-footer">
     <div class="footer-grid">
       <div class="first-footer">
         <h4>Join Confihair</h4>
-        <div  class="subscribe js-subscribe">
-        <input type="email" id="email-input" placeholder="enter your email" onkeydown="callEvent(event)">
+        <div  class="subscribe" id="js-subscribe">
+        <input type="email" id="email-input" placeholder="enter your email" onkeydown="subscribe(event)">
         <button class="subscribe-button" onclick="subscribe();">Subscribe</button>
       </div>
       <div class="social-icons">
@@ -107,10 +113,10 @@
     </div>
      <p class="fifth-footer">(@) CONFIDA 2025</p>
   </footer>
-     
-
-<script type="module" src="product_data.js"></script>
+  
+  
+  <script type="module" src="product_data.js"></script>
   <script type="module" src="shop.js"></script>
-  </body>
+
   </body>
 </html>

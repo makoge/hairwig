@@ -1,0 +1,27 @@
+.wig-blog{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 500px;
+  margin: 50px auto;
+  border-radius:var(--radius) ;
+  background-color: black;
+}
+.blog-content{
+  justify-content: center;
+  align-items: center;
+}
+.wig-blog h2{
+  color: white;
+  font-size: 60px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+.blog-content a{
+  background-color: var(--brand);
+  border-radius: var(--radius);
+  text-decoration: none;
+  padding: 1rem 1rem;
+  margin-top: 20px;
+}
