@@ -28,7 +28,7 @@ products.forEach((product) => {
       <div class="cart-body">
         <div class="title-row"> 
         <h3 class="title">${product.name}</h3>
-        <div class="price">${formatCurrency(product.price)}</div>
+        <div class="price" data-price ="${product.price}">${formatCurrency(product.price)}</div>
         </div>
       
         <div class="meta">
@@ -77,7 +77,8 @@ const ensureViewCartLink = (actionsEl) => {
 const addToCart = (cardEl) => {
   const sku = cardEl.dataset.sku;
   const name = cardEl.querySelector('.title')?.textContent?.trim() || 'Product';
-  const priceText = cardEl.querySelector('.price')?.textContent?.trim() || '';
+  const priceEl = cardEl.querySelector('.price');
+  const price = Number(priceEl?.dataset.price ?? 0);
   const img = cardEl.querySelector('.cart-media img')?.getAttribute('src') || '';
   const selectedSwatch = cardEl.querySelector('.swatch.selected');
   const variant = selectedSwatch?.getAttribute('title') || null;
@@ -86,7 +87,7 @@ const addToCart = (cardEl) => {
   if (existing){
     existing.qty = (existing.qty || 1) + 1;
   }else{
-    cartItems.push({sku, name, price: priceText, img, variant, qty: 1});
+    cartItems.push({sku, name, price, img, variant, qty: 1});
   }
   saveCart(cartItems);
   updateCartCount(cartItems);

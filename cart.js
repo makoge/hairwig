@@ -17,9 +17,8 @@ const subtotalEl = document.querySelector('.js-subtotal');
 function computeSubtotal()
 {
   return cartItems.reduce((sum, item) => {
-    const unit = typeof item.price === 'number'
-    ? item.price
-    : Number(String(item.price).replace(/[^\d.]/g, '')) || 0;
+    const unit = Number(item.price) || 0;
+    
     return sum + unit * (item.qty || 1);
   }, 0);
 }
@@ -31,9 +30,7 @@ function renderCart() {
     listEl.innerHTML = `<p>Your cart is empty.</p>`;
   } else{
     listEl.innerHTML = cartItems.map((it, idx) => {
-      const unit = typeof it.price === 'number'
-      ? it.price
-      : Number(String(it.price).replace(/[^\d.]/g, '')) || 0;
+      const unit = Number(it.price) || 0;
       const total = unit * (it.qty || 1);
       return `
       <div class="cart-item" data-key="${encodeURIComponent(it.sku)}" data-variant="${encodeURIComponent(it.variant || '')}">
@@ -51,7 +48,7 @@ function renderCart() {
       <button class="qty-btn" data-action="remove" aria-label="Remove"><i class="fa-solid fa-delete-left"></i></button>
       </div>
       </div>
-      <div class="item-total">${formatCurrency(total)}</div>
+      <div class="item-total" >${formatCurrency(total)}</div>
       </div>
       `;
     }).join('');

@@ -1,4 +1,10 @@
-import { products, formatCurrency/*, updateCartCount, loadCart, cart_key, saveCart, makeSwatches*/ } from "./utils.js";
+import { products, formatCurrency, updateCartCount, loadCart, cart_key, saveCart, makeSwatches } from "./utils.js";
+
+let cartItems = loadCart();
+
+
+
+updateCartCount(cartItems);
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -8,6 +14,7 @@ function renderDetails(){
  const preVariant = params.get('variant');
  const product = products.find(p => p.sku === sku);
  if(!product){
+
   document.getElementById('pd-title').textContent = 'product not found';
  }else{
   document.getElementById('pd-title').textContent = product.name;
@@ -74,8 +81,52 @@ colorsWrap.addEventListener('click', (e)=>{
   sw.classList.add('selected');
  
 });
- }
+ 
 
+ const addBtn = document.getElementById('pd-add');
+  if (addBtn) {
+    addBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+
+    
+      const selectedSwatch = colorsWrap?.querySelector('.swatch.selected');
+      const variant =
+        selectedSwatch?.getAttribute('title') ||
+        preVariant ||
+        (initial && initial.label) ||
+        null;
+
+      const imgSrc = mainImg?.src || product.img || '';
+
+      // check if same sku+variant already in cart
+      const existing = cartItems.find(
+        item => item.sku === product.sku && (item.variant || null) === (variant || null)
+      );
+
+      if (existing) {
+        existing.qty = (existing.qty || 1) + 1;
+      } else {
+        cartItems.push({
+          sku: product.sku,
+          name: product.name,
+          price: product.price, // numeric
+          img: imgSrc,
+          variant,
+          qty: 1
+        });
+      }
+
+      saveCart(cartItems);
+      updateCartCount(cartItems);
+
+      addBtn.textContent = 'Added to cart';
+      addBtn.classList.add('added');
+      addBtn.setAttribute('aria-disabled', 'true');
+    });
+  }
 }
+}
+
+
  document.addEventListener("DOMContentLoaded", renderDetails);
  
